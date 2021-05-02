@@ -9,31 +9,22 @@ function addToCollection(title, artist, yearPublished) {
     yearPublished: yearPublished,
   }; // Ending object - albums
 
-  // Add the new object to the end of the collection array
   collection.push(album);
 
-  // Return the newly created object
   return album;
 } // End addToCollection
 
 function showCollection(albumCollection) {
-  // Console.log the number of items in the array
   console.log(`Number of Albums in the collection --> `, albumCollection.length);
 
-  // Loop over the array
   for (let i = 0; i < albumCollection.length; i++) {
 
-    let albumObject = albumCollection[i]; // { title: 'Fortress', artist: 'Protest the hero', yearPublished: 2008 }
+    let albumObject = albumCollection[i];
     let title = albumObject.title;
     let artist = albumObject.artist;
     let yearPublished = albumObject.yearPublished;
 
-    // let title = albumCollection[i];
-    // let artist = albumCollection[i];
-    // let yearPublished = albumCollection[i];
-
-    // console.log each album's information formatted like: `TITLE by ARTIST, published in YEAR`.
-    console.log(`${title} by ${artist}, published in ${yearPublished}`); // ** says title, artist, and yearPublished arent defined
+    console.log(`${title} by ${artist}, published in ${yearPublished}`);
   }//End loop
 }//End showCollection
 
@@ -52,8 +43,8 @@ function findByArtist(artistName) {
       artistList.push(artist);
     }//End if
   } // End loop
-  return artistList;
   console.log(artistList);
+  return artistList;
 } // End findByArtist function
 
 
@@ -78,11 +69,13 @@ addToCollection('Matriarch', 'Veil of Maya', 2015);
 console.log(`Current value of collection constant --> `, collection);
 
 //** Testing showCollection
-
+console.log('Testing showCollection');
 showCollection(collection);
 
 //** Testing findByArtist
-
+console.log('Testing Umphrey\'s McGee search');
 findByArtist('Umphrey\'s Mcgee');
+console.log('Testing search for artist NOT in list');
 findByArtist('Brittney Spears');
+console.log('Testing artist with multiple albums');
 findByArtist('Protest The Hero');
